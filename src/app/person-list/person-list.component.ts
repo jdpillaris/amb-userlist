@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-person-list',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonListComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private authStatus:AuthService) { 
+    if (AuthService) {
+      
+    }
+  }
 
   ngOnInit() {
   }

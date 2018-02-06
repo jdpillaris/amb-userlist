@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthService } from './auth.service';
+
+import { AuthGuard} from './auth.guard';
 
 const appRoutes:Routes = [
   {
@@ -15,6 +18,7 @@ const appRoutes:Routes = [
   },
   {
     path: 'persons',
+    canActivate: [AuthGuard],
     component: PersonListComponent
   }
 ]
@@ -30,7 +34,7 @@ const appRoutes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
