@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Person } from '../person';
+import { PERSONS } from '../mock-persons';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,12 +10,12 @@ import { AuthService } from '../auth.service';
 })
 export class PersonListComponent implements OnInit {
 
-  
   constructor(private authStatus:AuthService) { 
     if (AuthService) {
-      
     }
   }
+
+  persons = PERSONS;
 
   ngOnInit() {
   }

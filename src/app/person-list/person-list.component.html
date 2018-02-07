@@ -1,3 +1,25 @@
-<p>
+<!-- <p>
   The person-list is empty!
-</p>
+</p> -->
+<h2>List of Persons</h2>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Birth Date</th>
+    <th>Country</th>
+    <th>Uncomplete</th>
+  </tr>
+  <tr *ngFor="let person of persons">
+      <td>{{person.firstname}}</td>
+      <td>{{person.lastname}}</td>
+      <td>{{person.birthdate}}</td>
+      <td>{{person.country}}</td>
+      <td>{{person.uncomplete ? 'Complete' : 'Incomplete'}}</td>
+  </tr>
+</table>
+<!-- <ul class="persons">
+  <li *ngFor="let person of persons">
+    <span class="badge">{{person.id}}</span> {{person.firstname}}&nbsp; {{person.lastname}}
+  </li>
+</ul> -->

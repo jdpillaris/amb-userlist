@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from './auth.service';
 
 import { AuthGuard} from './auth.guard';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 const appRoutes:Routes = [
   {
@@ -31,6 +34,9 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
