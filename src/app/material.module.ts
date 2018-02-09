@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatPaginatorModule, MatIconModule } from '@angular/material';
 
 @NgModule({
     // declarations: [MatSort],
-    imports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule],
-    exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule],
+    imports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatPaginatorModule, MatIconModule],
+    exports: [MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatCheckboxModule, MatPaginatorModule, MatIconModule],
 })
 
 export class MaterialModule { }

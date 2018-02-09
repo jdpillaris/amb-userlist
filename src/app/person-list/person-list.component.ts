@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Person } from '../person';
 import { PERSONS } from '../mock-persons';
 import { AuthService } from '../auth.service';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort, Sort, MatPaginator } from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
@@ -18,8 +18,22 @@ export class PersonListComponent implements OnInit {
   }
   displayedColumns = ['select', 'firstname', 'lastname', 'country', 'birthdate', 'iscomplete'];
   persons = PERSONS;
-  dataSource = new MatTableDataSource<Person>(PERSONS);
-  selection = new SelectionModel<Person>(true, []);
+  dataSource = new MatTableDataSource(PERSONS);
+  selection = new SelectionModel(true, []);
+
+  ngOnInit() {
+  }
+
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  /**
+   * Set the sort after the view init since this component will
+   * be able to query its view for the initialized sort.
+   */
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -33,9 +47,6 @@ export class PersonListComponent implements OnInit {
     this.isAllSelected() ?
         this.selection.clear() :
         this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  ngOnInit() {
   }
 
 }
