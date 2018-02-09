@@ -35,10 +35,10 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

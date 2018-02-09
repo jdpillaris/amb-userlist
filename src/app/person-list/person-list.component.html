@@ -1,18 +1,50 @@
 
 <h2>List of Persons</h2>
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Birth Date</th>
-    <th>Country</th>
-    <th>Uncomplete</th>
-  </tr>
-  <tr *ngFor="let person of persons">
-      <td>{{person.firstname}}</td>
-      <td>{{person.lastname}}</td>
-      <td>{{person.birthdate}}</td>
-      <td>{{person.country}}</td>
-      <td>{{person.uncomplete ? 'Complete' : 'Incomplete'}}</td>
-  </tr>
-</table>
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </mat-cell>
+    </ng-container>
+    <!-- FirstName Column -->
+    <ng-container matColumnDef="firstname">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let person"> {{person.firstname}} </mat-cell>
+    </ng-container>
+    <!-- LastName Column -->
+    <ng-container matColumnDef="lastname">
+      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let person"> {{person.lastname}} </mat-cell>
+    </ng-container>
+    <!-- Country Column -->
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+      <mat-cell *matCellDef="let person"> {{person.country}} </mat-cell>
+    </ng-container>
+    <!-- BirthDate Column -->
+    <ng-container matColumnDef="birthdate">
+      <mat-header-cell *matHeaderCellDef> Birth Date </mat-header-cell>
+      <mat-cell *matCellDef="let person"> {{person.birthdate}} </mat-cell>
+    </ng-container>
+    <!-- Uncomplete Column -->
+    <ng-container matColumnDef="iscomplete">
+      <mat-header-cell *matHeaderCellDef> Uncomplete </mat-header-cell>
+      <mat-cell *matCellDef="let person"> {{person.iscomplete}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+    </mat-row>
+  </mat-table>
+</div>

@@ -1,8 +1,8 @@
-export class Person {
+export interface Person {
     id: number;
     firstname: string;
     lastname: string;
-    birthdate: Date;
     country: string;
-    uncomplete: boolean;
+    birthdate: Date;
+    iscomplete: boolean;
   }
