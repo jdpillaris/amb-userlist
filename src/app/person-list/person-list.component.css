@@ -16,4 +16,8 @@
   .mat-header-cell.mat-sort-header-sorted {
     color: black;
   }
+
+  mat-sidenav {
+    width: 200px;
+  }
   

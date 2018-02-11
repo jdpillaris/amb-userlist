@@ -22,7 +22,6 @@ export class PersonListComponent implements OnInit {
   persons = PERSONS;
   dataSource = new MatTableDataSource(PERSONS);
   selection = new SelectionModel(true, []);
-  //dialogResult = "";
 
   ngOnInit() {
   }
