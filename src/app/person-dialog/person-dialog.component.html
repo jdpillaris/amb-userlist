@@ -1,0 +1,46 @@
+
+<div>
+  <h2 md-dialog-title>Edit {{getFullName(data)}} details</h2>
+  <hr>
+  <mat-dialog-content>
+    <!-- <form (submit)="savePerson($event)"> -->
+      <div class="form-group">
+        <label mat-label>Firstname</label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" [(ngModel)]="data.firstname" id="firstname" name="firstname" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label mat-label>Lastname</label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" [(ngModel)]="data.lastname" id="lastname" name="lastname" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label mat-label>PhoneNumber</label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" [(ngModel)]="data.phonenumber" id="phonenumber" name="phonenumber" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label mat-label>Country</label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" [(ngModel)]="data.country" id="country" name="country" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label mat-label>BirthDate</label>
+        <mat-form-field>
+          <input matInput type="text" class="form-control" [(ngModel)]="data.birthdate" id="birthdate" name="birthdate" required>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-dialog-actions>
+            <button md-raised-button (click)="onCloseCancel()">Cancel</button> &nbsp;
+            <button md-raised-button (click)="onCloseConfirm()">Update Account</button>
+        </mat-dialog-actions>
+      </div>
+    <!-- </form> -->
+  </mat-dialog-content>
+  <hr>
+</div>

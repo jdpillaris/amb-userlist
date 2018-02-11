@@ -13,6 +13,8 @@ import { AuthGuard} from './auth.guard';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { MatDialogModule } from '@angular/material';
+import { PersonDialogComponent } from './person-dialog/person-dialog.component';
 
 const appRoutes:Routes = [
   {
@@ -30,7 +32,8 @@ const appRoutes:Routes = [
   declarations: [
     AppComponent,
     LoginFormComponent,
-    PersonListComponent
+    PersonListComponent,
+    PersonDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,8 +41,10 @@ const appRoutes:Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule
   ],
+  entryComponents: [PersonDialogComponent],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
