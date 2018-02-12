@@ -1,23 +1,23 @@
+<div class="main-div">
+  <mat-card class="center" text-align="center center">
+    <mat-card-title>Please Sign In</mat-card-title>
+      <form (submit)="loginUser($event)">
+        <div class="form-group">
+          <label mat-label>Username</label>
+          <mat-form-field>
+            <input matInput type="text" id="name" name="name" required>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <label mat-label>Password</label>
+          <mat-form-field>
+            <input matInput type="password" id="password" name="password" required>
+          </mat-form-field>
+        </div>
 
-<h1>Login Form</h1>
-<form (submit)="loginUser($event)">
-  <!-- <div class="form-group"> -->
-  <div class="form-group">
-    <label mat-label>Username</label>
-    <mat-form-field>
-      <!-- <input matInput class="form-control" type="text" required> -->
-      <input matInput type="text" class="form-control" id="name" name="name" required>
-    </mat-form-field>
-  </div>
-  <div class="form-group">
-    <label mat-label>Password</label>
-    <mat-form-field>
-      <!-- <input matInput class="form-control" type="password" required> -->
-      <input matInput type="password" class="form-control" id="password" name="password" required>
-    </mat-form-field>
-  </div>
-
-  <div class="form-group">
-    <button mat-button type="submit">LOGIN</button>
-  </div>
-</form>
+        <div>
+          <button mat-button type="submit">LOGIN</button>
+        </div>
+      </form>
+  </mat-card>
+</div>

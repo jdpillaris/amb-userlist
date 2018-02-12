@@ -5,7 +5,7 @@ import { Person } from '../person';
 @Component({
   selector: 'app-person-dialog',
   templateUrl: './person-dialog.component.html',
-  styleUrls: ['./person-dialog.component.css']
+  styleUrls: ['./person-dialog.component.scss']
 })
 export class PersonDialogComponent implements OnInit {
   @Input() person: Person;
