@@ -20,3 +20,22 @@
   .sidenav-content {
     padding: 20px;
   }
+
+  //For the solo 'Search' field
+  .mat-form-field--solo {
+    padding: 0 10px;
+    margin: 10px;
+  }
+  .mat-form-field--solo .mat-input-underline,
+  .mat-form-field--solo .mat-form-field-underline {
+    display: none !important;
+  }
+  // .mat-form-field-wrapper {
+    // padding-bottom: 1em;
+  // }
+
+  .fill-space {
+    // This fills the remaining space, by using flexbox.
+    // Every toolbar row uses a flexbox row layout.
+    flex: 1 1 auto;
+  }
