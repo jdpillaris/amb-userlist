@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { MatDialogModule } from '@angular/material';
 import { PersonDialogComponent } from './person-dialog/person-dialog.component';
+// import {MatPaginatorIntl} from '@angular/material';
+// import {MatPaginatorIntlPersonList} from './MatPaginatorIntlPersonList';
 
 const appRoutes:Routes = [
   {
@@ -45,7 +47,11 @@ const appRoutes:Routes = [
     MatDialogModule
   ],
   entryComponents: [PersonDialogComponent],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService, 
+    AuthGuard,
+    // { provide: MatPaginatorIntl, useClass: MatPaginatorIntlPersonList }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
