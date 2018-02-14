@@ -12,4 +12,11 @@ describe('AuthService', () => {
   it('should be created', inject([AuthService], (service: AuthService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('should set authentication status', inject([AuthService], (service: AuthService) => {
+    // expect(service.setIsAuthenticated).toBeTruthy();
+    expect(service.authenticated).toBeFalsy();
+    service.setIsAuthenticated();
+    expect(service.authenticated).toBeTruthy();
+  }));
 });

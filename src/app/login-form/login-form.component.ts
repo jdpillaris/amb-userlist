@@ -19,8 +19,8 @@ export class LoginFormComponent implements OnInit {
   loginUser(e) {
     e.preventDefault();
     
-    var username = e.target.elements[0].value;
-    var password = e.target.elements[1].value;
+    let username = e.target.elements[0].value;
+    let password = e.target.elements[1].value;
     
     if(username == 'test@nv.com' && password == 'tested') {
       this.authService.setIsAuthenticated();
