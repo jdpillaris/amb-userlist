@@ -13,7 +13,7 @@ import { AuthGuard} from './auth.guard';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule, MatNativeDateModule } from '@angular/material';
 import { PersonDialogComponent } from './person-dialog/person-dialog.component';
 // import {MatPaginatorIntl} from '@angular/material';
 // import {MatPaginatorIntlPersonList} from './MatPaginatorIntlPersonList';
@@ -44,7 +44,8 @@ const appRoutes:Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MaterialModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule
   ],
   entryComponents: [PersonDialogComponent],
   providers: [

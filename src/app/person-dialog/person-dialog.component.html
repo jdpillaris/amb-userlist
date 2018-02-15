@@ -5,33 +5,38 @@
   <mat-dialog-content>
     <!-- <form (submit)="savePerson($event)"> -->
       <div>
-        <label mat-label>Firstname</label>
         <mat-form-field>
-          <input matInput type="text" [(ngModel)]="data.firstname" id="firstname" name="firstname" required>
+          <input matInput type="text" [(ngModel)]="data.firstname" id="firstname" name="firstname"
+          placeholder="First Name" required>
         </mat-form-field>
       </div>
       <div>
-        <label mat-label>Lastname</label>
+        <!-- <label mat-label>Lastname</label> -->
         <mat-form-field>
-          <input matInput type="text" [(ngModel)]="data.lastname" id="lastname" name="lastname" required>
+          <input matInput type="text" [(ngModel)]="data.lastname" id="lastname" name="lastname"
+          placeholder="Last Name" required>
         </mat-form-field>
       </div>
       <div>
-        <label mat-label>PhoneNumber</label>
         <mat-form-field>
-          <input matInput type="text" [(ngModel)]="data.phonenumber" id="phonenumber" name="phonenumber" required>
+          <input matInput type="text" [(ngModel)]="data.phonenumber" id="phonenumber" name="phonenumber"
+          placeholder="Phone Number" required>
         </mat-form-field>
       </div>
       <div>
-        <label mat-label>Country</label>
         <mat-form-field>
-          <input matInput type="text" [(ngModel)]="data.country" id="country" name="country" required>
+          <input matInput type="text" [(ngModel)]="data.country" id="country" name="country"
+          placeholder="Country" required>
         </mat-form-field>
       </div>
       <div>
-        <label mat-label>BirthDate</label>
         <mat-form-field>
-          <input matInput type="text" [(ngModel)]="data.birthdate" id="birthdate" name="birthdate" required>
+          <!-- <input matInput type="text" [(ngModel)]="data.birthdate" id="birthdate" name="birthdate"
+          placeholder="Birth Date" required> -->
+          <input matInput [matDatepicker]="picker" [(ngModel)]="data.birthdate" id="birthdate"
+          name="birthdate" placeholder="Birth Date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker startView="year" [startAt]="data.birthdate"></mat-datepicker>
         </mat-form-field>
       </div>
       <div>

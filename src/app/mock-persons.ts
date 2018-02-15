@@ -11,5 +11,5 @@ export const PERSONS: Person[] = [
   { id: 18, firstname: 'David', lastname: 'Walliams', phonenumber:'', country: 'UK', birthdate: new Date("February 4, 1989") },
   { id: 19, firstname: 'Tony', lastname: 'Leung', phonenumber:'', country: 'China', birthdate: new Date("February 4, 1989") },
   { id: 20, firstname: 'Kenneth', lastname: 'Low', phonenumber:'', country: 'Singapore', birthdate: new Date("February 4, 1989") },
-  { id: 11, firstname: 'Mahathir', lastname: 'Muhammad', phonenumber:'', country: 'Malaysia', birthdate: new Date("February 4, 1989") }
+  { id: 21, firstname: 'Mahathir', lastname: 'Muhammad', phonenumber:'', country: 'Malaysia', birthdate: new Date("February 4, 1989") }
 ];

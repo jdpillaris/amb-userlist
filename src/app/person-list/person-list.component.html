@@ -76,7 +76,7 @@
             <!-- BirthDate Column -->
             <ng-container matColumnDef="birthdate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date </mat-header-cell>
-              <mat-cell *matCellDef="let person"> {{person.birthdate}} </mat-cell>
+              <mat-cell *matCellDef="let person"> {{ person.birthdate.toLocaleDateString() }} </mat-cell>
             </ng-container>
             <!-- Uncomplete Column -->
             <ng-container matColumnDef="iscomplete">
